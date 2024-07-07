@@ -6,7 +6,7 @@
 
 # Callback
 A callback is a function passed as an argument to another function.
-```
+```js
 function sum(a,b){
     console.log("Sum is a callback",a+b);
 }
@@ -20,7 +20,7 @@ cal(10,20,sum)
 ```
 # Callback Hell
 Callback Hell in JavaScript is when multiple nested callbacks make code hard to read and maintain 🔄🔄🔄. It looks like a pyramid of doom 🏔️, making debugging difficult 🐛.
-```
+```js
 function getData(dataID, getNextData){
     setTimeout(()=>{
         console.log("Fetching data",dataID);
@@ -54,7 +54,7 @@ getData(1,()=>{
  Promises in JavaScript handle async operations more smoothly 🌟. They represent future values 🌱, allowing you to chain actions without nested callbacks, making code cleaner and easier to read 📜.
 
 ### JavaScript Promises have three states: Pending (waiting) ⏳, Fulfilled (completed successfully) 🎉, and Rejected (failed) ❌. They help handle asynchronous operations more cleanly.
-```
+```js
 let promise=new Promise((resolve,reject)=>{
     console.log("Inside promise");
 })
