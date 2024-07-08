@@ -74,3 +74,61 @@ pro.catch((err)=>{
     console.log("Inside catch function",err);
 })
 ```
+# Promise chaining
+Promise chaining in JavaScript means linking multiple `.then()` calls in a sequence 🔗. Each `.then()` handles the result of the previous promise, making code cleaner and easier to follow 📜.
+```js
+function getData(dataID, getNextData) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Fetching data", dataID);
+            resolve("success");
+        }, 2000)
+    })
+}
+
+console.log("fetching started");
+getData(1)
+    .then((res) => {
+        return getData(2)
+    })
+    .then((res) => {
+        return getData(3)
+    })
+    .then((res) => {
+        console.log(res);
+    })
+```
+# Async Await
+`async`/`await` in JavaScript lets you write asynchronous code like it's synchronous 🧘‍♂️. Use `async` to declare a function and `await` to pause until a promise resolves ⏸️➡️✅.
+`await` only works inside `async` functions.
+Async functions always return a promise 🌟. Use Await to wait for the promise to resolve.
+```
+function getData(dataID, getNextData) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Fetching data", dataID);
+            resolve("success");
+        }, 2000)
+    })
+}
+
+async function getAllData(){
+    await getData(1);
+    await getData(2);
+    await getData(3);
+    await getData(4);
+    await getData(5);
+    await getData(6);
+    await getData(7);
+    await getData(8);
+    await getData(9);
+    await getData(10);
+}
+```
+# IIFE (Immediately Invoked Function Expression)
+An IIFE (Immediately Invoked Function Expression) in JavaScript is a function that runs as soon as it's defined 🚀. It helps create a local scope to avoid variable conflicts 🔒.
+```js
+(async () => {
+    await getAllData();
+})()
+```
