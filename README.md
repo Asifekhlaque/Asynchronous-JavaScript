@@ -102,7 +102,7 @@ getData(1)
 `async`/`await` in JavaScript lets you write asynchronous code like it's synchronous 🧘‍♂️. Use `async` to declare a function and `await` to pause until a promise resolves ⏸️➡️✅.
 `await` only works inside `async` functions.
 Async functions always return a promise 🌟. Use Await to wait for the promise to resolve.
-```
+```js
 function getData(dataID, getNextData) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
